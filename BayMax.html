@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>baymax</title>
+    <style>
+      body {
+        background-color: #595959;
+      }
+
+      #baymax {
+        /* 设置局中 */
+        margin: 0 auto;
+
+        /* 高度 */
+        height: 600px;
+
+        overflow: hidden;
+      }
+
+      #head {
+        height: 64px;
+        width: 100px;
+        background-color: #fff;
+        border-radius: 50%;
+
+        margin: 0 auto;
+
+        margin-bottom: -20px;
+
+        border-bottom: 5px solid #e0e0e0;
+
+        position: relative;
+      }
+
+      #eye,
+      #eye2 {
+        width: 11px;
+        height: 13px;
+        background-color: #282828;
+        border-radius: 50%;
+        position: relative;
+        top: 30px;
+        left: 27px;
+
+        /* 旋转 */
+        transform: rotate(8deg);
+
+        animation: blink 1s ease-in-out infinite alternate ;
+      }
+
+      #eye2 {
+        /*  反着继续旋转 */
+        transform: rotate(-8deg);
+        left: 69px;
+        top: 17px;
+      }
+
+      #mouth {
+        width: 38px;
+        height: 1.5px;
+        background-color: #282828;
+        position: relative;
+        left: 34px;
+        top: 10px;
+      }
+
+      #torso,
+      #belly {
+        background-color: #fff;
+        width: 180px;
+        height: 200px;
+        margin: 0 auto;
+        border-radius: 47%;
+
+        border: 5px solid #e0e0e0;
+        border-top: none;
+        z-index: 1;
+      }
+
+      #belly {
+        margin-top: -140px;
+        height: 300px;
+        width: 245px;
+        z-index: 5;
+      }
+
+      #cover {
+        background-color: #fff;
+        width: 190px;
+        height: 150px;
+        border-radius: 50%;
+        position: relative;
+        margin: 0 auto;
+        top: -20px;
+      }
+
+      #heart {
+        width: 25px;
+        height: 25px;
+        background-color: #fff;
+        position: relative;
+        right: -115px;
+        top: 40px;
+        z-index: 111;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        /* inset是将其改为内部阴影 */
+        box-shadow: 2px 5px 2px #ccc inset;
+      }
+
+      #left-arm,
+      #right-arm {
+        height: 270px;
+        width: 120px;
+        background-color: #fff;
+        margin: 0 auto;
+        position: relative;
+        top: -350px;
+        left: -100px;
+        transform: rotate(20deg);
+        z-index: -1;
+        border-radius: 50%;
+      }
+
+      #right-arm {
+        left: 100px;
+        top: -620px;
+        transform: rotate(-20deg);
+      }
+
+      #l-bigfinger,
+      #r-bigfinger {
+        width: 20px;
+        height: 50px;
+        background-color: #fff;
+        position: relative;
+        top: 250px;
+        left: 50px;
+        transform: rotate(-50deg);
+        border-radius: 50%;
+      }
+
+      #r-bigfinger {
+        transform: rotate(50deg);
+      }
+
+      #l-smallfinger,
+      #r-smallfinger {
+        width: 15px;
+        height: 35px;
+        background-color: #fff;
+        position: relative;
+        border-radius: 50%;
+        top: 195px;
+        left: 66px;
+        transform: rotate(-40deg);
+      }
+      #r-smallfinger {
+        transform: rotate(40deg);
+        left: 37px;
+      }
+
+      #left-leg,
+      #right-leg{
+        background-color: #fff;
+        width: 90px;
+        height: 170px;
+        border-radius: 40% 30% 10px 45%;
+        margin: 0 auto;
+        position: relative;
+        top: -640px;
+        left: -45px;
+        transform: rotate(-1deg);
+        z-index: -2;
+      }
+
+      #right-leg {
+        left: 50px;
+        top: -810px;
+        border-radius: 30% 40% 45% 10px;
+      }
+
+      @keyframes blink {
+        40% {
+          transform:rotateX(80deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="baymax">
+      <!-- 定义头部 包括2个眼睛和嘴巴 -->
+      <div id="head">
+        <div id="eye"></div>
+        <div id="eye2"></div>
+        <div id="mouth"></div>
+      </div>
+
+      <!-- 定于躯干  包括心脏部分 -->
+      <div id="torso">
+        <div id="heart"></div>
+      </div>
+
+      <!-- 定义肚子腹部 包括和躯干的连接部分 -->
+      <div id="belly">
+        <div id="cover"></div>
+      </div>
+
+      <!--  定义左臂 包括一大一小2个手指 -->
+      <div id="left-arm">
+        <div id="l-bigfinger"></div>
+        <div id="l-smallfinger"></div>
+      </div>
+
+      <!--  定义右臂 包括一大一小2个手指 -->
+      <div id="right-arm">
+        <div id="r-bigfinger"></div>
+        <div id="r-smallfinger"></div>
+      </div>
+
+      <!-- 定义左腿 -->
+      <div id="left-leg"></div>
+
+      <!-- 定义右腿 -->
+      <div id="right-leg"></div>
+    </div>
+  </body>
+</html>
